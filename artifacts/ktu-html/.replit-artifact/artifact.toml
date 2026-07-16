@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/ktu-html/"
+title = "KTU Portal (HTML/CSS/JS)"
+version = "1.0.0"
+id = "artifacts/ktu-html"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/ktu-html/" ]
+localPort = 22166
+
+[services.development]
+run = "pnpm --filter @workspace/ktu-html run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ktu-html", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ktu-html/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22166"
+BASE_PATH = "/ktu-html/"

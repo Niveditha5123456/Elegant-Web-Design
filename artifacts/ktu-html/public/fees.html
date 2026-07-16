@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fees — KTU Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-text">KTU</div>
+          <div class="logo-sub">Kerala<br>Technological<br>University</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="about.html" class="nav-link"><i data-lucide="building-2"></i> About KTU</a>
+        <a href="attendance.html" class="nav-link"><i data-lucide="user-check"></i> Attendance</a>
+        <a href="timetable.html" class="nav-link"><i data-lucide="calendar-days"></i> Timetable</a>
+        <a href="fees.html" class="nav-link"><i data-lucide="indian-rupee"></i> Fees</a>
+        <a href="courses.html" class="nav-link"><i data-lucide="book-open"></i> Courses</a>
+        <a href="rank.html" class="nav-link"><i data-lucide="trophy"></i> Rankings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">AS</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Suresh</div>
+            <div class="user-roll">TVE21CS047</div>
+          </div>
+          <button class="logout-btn" onclick="window.location.href='../index.html'" title="Logout">
+            <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle"><i data-lucide="menu"></i></button>
+          <h1 class="page-title">Fee Status</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper fade-in">
+        
+        <!-- Summary Cards -->
+        <div class="grid-3" style="margin-bottom: 24px;">
+          <div class="card">
+            <div class="stat-label">Total Fees (S6)</div>
+            <div class="stat-value">₹1,18,500</div>
+          </div>
+          <div class="card">
+            <div class="stat-label">Amount Paid</div>
+            <div class="stat-value color-emerald">₹94,000</div>
+          </div>
+          <div class="card" style="border-color: rgba(245, 158, 11, 0.3);">
+            <div class="stat-label">Amount Due</div>
+            <div class="stat-value color-amber">₹24,500</div>
+            <button class="btn" style="margin-top: 16px; width: 100%;">Pay Now</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span style="font-size: 14px; color: var(--text-secondary);">Payment Progress</span>
+            <span style="font-size: 14px; font-weight: 600;">79% Paid</span>
+          </div>
+          <div class="progress-bg" style="height: 10px;">
+            <div class="progress-bar" style="background: var(--accent-emerald);" data-width="79%"></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Fee Breakdown -->
+          <div class="card">
+            <h2 class="font-display" style="font-size: 18px; margin-bottom: 20px;">Semester 6 Breakdown</h2>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tuition Fee</td>
+                    <td style="font-weight: 500;">₹65,000</td>
+                    <td><span class="badge safe">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>Lab Fee</td>
+                    <td style="font-weight: 500;">₹8,500</td>
+                    <td><span class="badge safe">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>Examination Fee</td>
+                    <td style="font-weight: 500;">₹2,500</td>
+                    <td><span class="badge safe">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>Library Fee</td>
+                    <td style="font-weight: 500;">₹1,000</td>
+                    <td><span class="badge safe">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>University Development Fund</td>
+                    <td style="font-weight: 500;">₹17,000</td>
+                    <td><span class="badge safe">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>Bus Fee</td>
+                    <td style="font-weight: 500; color: var(--accent-amber);">₹12,000</td>
+                    <td><span class="badge warning">Due</span></td>
+                  </tr>
+                  <tr>
+                    <td>Hostel Fee</td>
+                    <td style="font-weight: 500; color: var(--accent-amber);">₹12,500</td>
+                    <td><span class="badge warning">Due</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Payment History -->
+          <div class="card">
+            <h2 class="font-display" style="font-size: 18px; margin-bottom: 20px;">Payment History</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 16px; align-items: center;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight: 600;">First Installment</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">05 Jan 2024 • Receipt #REC-8492</div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="font-weight: 600;">₹50,000</div>
+                  <button style="background: none; border: none; color: var(--accent-blue); cursor: pointer;"><i data-lucide="download" style="width: 18px; height: 18px;"></i></button>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 16px; align-items: center;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight: 600;">Second Installment</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">15 Feb 2024 • Receipt #REC-9102</div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="font-weight: 600;">₹27,000</div>
+                  <button style="background: none; border: none; color: var(--accent-blue); cursor: pointer;"><i data-lucide="download" style="width: 18px; height: 18px;"></i></button>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 16px; align-items: center;">
+                  <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center;">
+                    <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight: 600;">University Development Fund</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">02 Mar 2024 • Receipt #REC-9844</div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <div style="font-weight: 600;">₹17,000</div>
+                  <button style="background: none; border: none; color: var(--accent-blue); cursor: pointer;"><i data-lucide="download" style="width: 18px; height: 18px;"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rankings — KTU Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/charts.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-text">KTU</div>
+          <div class="logo-sub">Kerala<br>Technological<br>University</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="about.html" class="nav-link"><i data-lucide="building-2"></i> About KTU</a>
+        <a href="attendance.html" class="nav-link"><i data-lucide="user-check"></i> Attendance</a>
+        <a href="timetable.html" class="nav-link"><i data-lucide="calendar-days"></i> Timetable</a>
+        <a href="fees.html" class="nav-link"><i data-lucide="indian-rupee"></i> Fees</a>
+        <a href="courses.html" class="nav-link"><i data-lucide="book-open"></i> Courses</a>
+        <a href="rank.html" class="nav-link"><i data-lucide="trophy"></i> Rankings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">AS</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Suresh</div>
+            <div class="user-roll">TVE21CS047</div>
+          </div>
+          <button class="logout-btn" onclick="window.location.href='../index.html'" title="Logout">
+            <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle"><i data-lucide="menu"></i></button>
+          <h1 class="page-title">University Rankings</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper fade-in">
+        
+        <!-- Hero Ranking Card -->
+        <div class="card" style="margin-bottom: 24px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--bg-card), rgba(59, 130, 246, 0.1)); border-color: var(--accent-blue);">
+          <div style="position: absolute; right: -20px; top: -20px; opacity: 0.1; transform: scale(3);">
+            <i data-lucide="trophy" style="width: 100px; height: 100px; color: var(--accent-blue);"></i>
+          </div>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1;">
+            <div>
+              <div style="font-size: 14px; color: var(--accent-blue); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Official 2024 Report</div>
+              <h2 class="font-display" style="font-size: 32px; margin-bottom: 8px;">KTU Rankings 2024</h2>
+              <p style="color: var(--text-secondary);">Excellence in Engineering Education & Research</p>
+            </div>
+            <div style="width: 80px; height: 80px; background: rgba(59, 130, 246, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);">
+              <i data-lucide="medal" style="width: 40px; height: 40px; color: var(--accent-blue);"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="grid-4 stagger-grid" style="margin-bottom: 24px;">
+          <div class="card text-center" style="padding: 32px 24px;">
+            <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">QS World</div>
+            <div class="stat-value color-purple" style="font-size: 36px; margin: 0;">801-1000</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">Global Band</div>
+          </div>
+          <div class="card text-center" style="padding: 32px 24px;">
+            <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">NIRF India</div>
+            <div class="stat-value color-blue" style="font-size: 36px; margin: 0;">#47</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">Engineering Category</div>
+          </div>
+          <div class="card text-center" style="padding: 32px 24px;">
+            <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">State Rank</div>
+            <div class="stat-value color-cyan" style="font-size: 36px; margin: 0;">#1</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">In Kerala</div>
+          </div>
+          <div class="card text-center" style="padding: 32px 24px;">
+            <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">NAAC Grade</div>
+            <div class="stat-value color-emerald" style="font-size: 36px; margin: 0;">A+</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 8px;">3.42 CGPA</div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <div class="card">
+            <h3 class="font-display" style="font-size: 18px; margin-bottom: 24px;">5-Year Ranking Trend (NIRF)</h3>
+            <div style="height: 300px; width: 100%;">
+              <canvas id="rankTrendChart"></canvas>
+            </div>
+            <div style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--accent-emerald); font-weight: 500;">
+              <i data-lucide="trending-up" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle;"></i> Consistent improvement over 5 years
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="font-display" style="font-size: 18px; margin-bottom: 24px;">Peer Institution Comparison</h3>
+            <div style="height: 300px; width: 100%;">
+              <canvas id="peerChart"></canvas>
+            </div>
+            <div style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--text-muted);">
+              Based on overall NIRF scores 2024
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="font-display" style="font-size: 18px; margin-bottom: 24px;">Accreditations & Recognitions</h3>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            
+            <div style="flex: 1; min-width: 150px; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); padding: 16px; border-radius: 12px; text-align: center;">
+              <i data-lucide="check-circle" style="color: var(--accent-emerald); margin-bottom: 8px;"></i>
+              <div style="font-weight: 600; font-size: 14px;">NAAC A+</div>
+            </div>
+            
+            <div style="flex: 1; min-width: 150px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 16px; border-radius: 12px; text-align: center;">
+              <i data-lucide="award" style="color: var(--accent-blue); margin-bottom: 8px;"></i>
+              <div style="font-weight: 600; font-size: 14px;">NBA Accredited</div>
+            </div>
+            
+            <div style="flex: 1; min-width: 150px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); padding: 16px; border-radius: 12px; text-align: center;">
+              <i data-lucide="globe" style="color: var(--accent-purple); margin-bottom: 8px;"></i>
+              <div style="font-weight: 600; font-size: 14px;">QS Ranked</div>
+            </div>
+            
+            <div style="flex: 1; min-width: 150px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); padding: 16px; border-radius: 12px; text-align: center;">
+              <i data-lucide="bar-chart" style="color: var(--accent-amber); margin-bottom: 8px;"></i>
+              <div style="font-weight: 600; font-size: 14px;">NIRF Top 50</div>
+            </div>
+            
+            <div style="flex: 1; min-width: 150px; background: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.2); padding: 16px; border-radius: 12px; text-align: center;">
+              <i data-lucide="users" style="color: var(--accent-cyan); margin-bottom: 8px;"></i>
+              <div style="font-weight: 600; font-size: 14px;">ISTE Chapter</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

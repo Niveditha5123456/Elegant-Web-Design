@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — KTU Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-text">KTU</div>
+          <div class="logo-sub">Kerala<br>Technological<br>University</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="about.html" class="nav-link"><i data-lucide="building-2"></i> About KTU</a>
+        <a href="attendance.html" class="nav-link"><i data-lucide="user-check"></i> Attendance</a>
+        <a href="timetable.html" class="nav-link"><i data-lucide="calendar-days"></i> Timetable</a>
+        <a href="fees.html" class="nav-link"><i data-lucide="indian-rupee"></i> Fees</a>
+        <a href="courses.html" class="nav-link"><i data-lucide="book-open"></i> Courses</a>
+        <a href="rank.html" class="nav-link"><i data-lucide="trophy"></i> Rankings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">AS</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Suresh</div>
+            <div class="user-roll">TVE21CS047</div>
+          </div>
+          <button class="logout-btn" onclick="window.location.href='../index.html'" title="Logout">
+            <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle"><i data-lucide="menu"></i></button>
+          <h1 class="page-title">Dashboard</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="greeting">Good Morning, Arjun</div>
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <!-- Stats Grid -->
+        <div class="grid-4 stagger-grid fade-in">
+          <!-- Stat 1 -->
+          <div class="card">
+            <div class="icon-box bg-blue-alpha color-blue">
+              <i data-lucide="activity"></i>
+            </div>
+            <div class="stat-label">Overall Attendance</div>
+            <div class="stat-value">81%</div>
+            <div class="progress-bg">
+              <div class="progress-bar" data-width="81%"></div>
+            </div>
+          </div>
+          
+          <!-- Stat 2 -->
+          <div class="card">
+            <div class="icon-box bg-purple-alpha color-purple">
+              <i data-lucide="award"></i>
+            </div>
+            <div class="stat-label">Current CGPA</div>
+            <div class="stat-value">8.4</div>
+            <div class="progress-bg">
+              <div class="progress-bar" style="background: var(--accent-purple);" data-width="84%"></div>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="card">
+            <div class="icon-box bg-amber-alpha color-amber">
+              <i data-lucide="wallet"></i>
+            </div>
+            <div class="stat-label">Fee Due</div>
+            <div class="stat-value">₹24,500</div>
+            <div style="font-size: 12px; color: var(--accent-rose); margin-top: 8px;">Due in 14 days</div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="card">
+            <div class="icon-box bg-cyan-alpha color-cyan">
+              <i data-lucide="book-marked"></i>
+            </div>
+            <div class="stat-label">Semester</div>
+            <div class="stat-value">6th Sem</div>
+            <div style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">B.Tech CSE</div>
+          </div>
+        </div>
+
+        <div class="grid-2 stagger-grid fade-in" style="margin-top: 24px;">
+          <!-- Today's Classes -->
+          <div class="card">
+            <h2 class="font-display" style="font-size: 18px; margin-bottom: 20px;">Today's Classes</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div style="font-size: 12px; color: var(--accent-blue); font-weight: 600;">09:00 AM - 10:00 AM</div>
+                <div style="font-weight: 600; margin: 4px 0;">Data Structures (CS403)</div>
+                <div style="font-size: 13px; color: var(--text-muted);">Room 204 • Dr. Rajesh Kumar</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple);"></div>
+                <div style="font-size: 12px; color: var(--accent-purple); font-weight: 600;">10:00 AM - 11:00 AM</div>
+                <div style="font-weight: 600; margin: 4px 0;">Operating Systems (CS407)</div>
+                <div style="font-size: 13px; color: var(--text-muted);">Room 204 • Dr. Sreeja Pillai</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background: var(--bg-card); border-color: var(--text-muted); box-shadow: none;"></div>
+                <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">11:00 AM - 12:00 PM</div>
+                <div style="font-weight: 600; margin: 4px 0;">Computer Networks (CS405)</div>
+                <div style="font-size: 13px; color: var(--text-muted);">Room 301 • Dr. Anil Menon</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <h2 class="font-display" style="font-size: 18px; margin-bottom: 20px;">Recent Activity</h2>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="check-circle-2" style="width: 16px; height: 16px;"></i>
+                </div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 500;">Assignment Submitted</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">DBMS Mini Project Phase 1 uploaded</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">2 hours ago</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(59, 130, 246, 0.1); color: var(--accent-blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="calendar-check" style="width: 16px; height: 16px;"></i>
+                </div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 500;">Attendance Marked</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">Present for Data Structures</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Today, 09:15 AM</div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(245, 158, 11, 0.1); color: var(--accent-amber); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <i data-lucide="bell-ring" style="width: 16px; height: 16px;"></i>
+                </div>
+                <div>
+                  <div style="font-size: 14px; font-weight: 500;">Exam Fee Notification</div>
+                  <div style="font-size: 12px; color: var(--text-muted);">S6 Regular Exam fee portal opens next week</div>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Yesterday</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable — KTU Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-text">KTU</div>
+          <div class="logo-sub">Kerala<br>Technological<br>University</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="about.html" class="nav-link"><i data-lucide="building-2"></i> About KTU</a>
+        <a href="attendance.html" class="nav-link"><i data-lucide="user-check"></i> Attendance</a>
+        <a href="timetable.html" class="nav-link"><i data-lucide="calendar-days"></i> Timetable</a>
+        <a href="fees.html" class="nav-link"><i data-lucide="indian-rupee"></i> Fees</a>
+        <a href="courses.html" class="nav-link"><i data-lucide="book-open"></i> Courses</a>
+        <a href="rank.html" class="nav-link"><i data-lucide="trophy"></i> Rankings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">AS</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Suresh</div>
+            <div class="user-roll">TVE21CS047</div>
+          </div>
+          <button class="logout-btn" onclick="window.location.href='../index.html'" title="Logout">
+            <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle"><i data-lucide="menu"></i></button>
+          <h1 class="page-title">Timetable</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper fade-in">
+        <div class="card" style="margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h2 class="font-display" style="font-size: 18px;">Weekly Schedule (S6 CSE)</h2>
+            <div style="font-size: 14px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-emerald); display: inline-block;"></span>
+              Current slot: 10:00 AM
+            </div>
+          </div>
+
+          <div style="overflow-x: auto; padding-bottom: 16px;">
+            <div class="timetable-grid">
+              <!-- Header Row -->
+              <div></div>
+              <div class="tt-header">MON</div>
+              <div class="tt-header">TUE</div>
+              <div class="tt-header" style="color: var(--accent-blue); background: rgba(59,130,246,0.1); border-radius: 8px;">WED</div>
+              <div class="tt-header">THU</div>
+              <div class="tt-header">FRI</div>
+              <div class="tt-header">SAT</div>
+
+              <!-- 8:00 Slot -->
+              <div class="tt-time">08:00 AM</div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-blue);">
+                <span class="tt-subject">CS403</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-purple);">
+                <span class="tt-subject">CS407</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell"></div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-amber);">
+                <span class="tt-subject">CS409</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-cyan);">
+                <span class="tt-subject">CS405</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell"></div>
+
+              <!-- 9:00 Slot -->
+              <div class="tt-time">09:00 AM</div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-rose);">
+                <span class="tt-subject">MA401</span>
+                <span class="tt-room">Room 102</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-blue);">
+                <span class="tt-subject">CS403</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-blue); background: rgba(59,130,246,0.05);">
+                <span class="tt-subject">CS403</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-emerald);">
+                <span class="tt-subject">CS411</span>
+                <span class="tt-room">Room 205</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-amber);">
+                <span class="tt-subject">CS409</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell"></div>
+
+              <!-- 10:00 Slot -->
+              <div class="tt-time" style="color: var(--text-primary); font-weight: 600;">10:00 AM</div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-emerald);">
+                <span class="tt-subject">CS411</span>
+                <span class="tt-room">Room 205</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-cyan);">
+                <span class="tt-subject">CS405</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-purple); background: rgba(139,92,246,0.1); border-color: var(--accent-purple);">
+                <span class="tt-subject color-purple">CS407</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-rose);">
+                <span class="tt-subject">MA401</span>
+                <span class="tt-room">Room 102</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-blue);">
+                <span class="tt-subject">CS403</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell"></div>
+
+              <!-- 11:00 Slot -->
+              <div class="tt-time">11:00 AM</div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-amber);">
+                <span class="tt-subject">CS409</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-emerald);">
+                <span class="tt-subject">CS411</span>
+                <span class="tt-room">Room 205</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-cyan); background: rgba(6,182,212,0.05);">
+                <span class="tt-subject">CS405</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-blue);">
+                <span class="tt-subject">CS403</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-purple);">
+                <span class="tt-subject">CS407</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell"></div>
+
+              <!-- LUNCH Break -->
+              <div class="tt-time">12:00 PM</div>
+              <div style="grid-column: span 6; background: rgba(255,255,255,0.02); display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 13px; letter-spacing: 2px; border-radius: 8px;">
+                LUNCH BREAK
+              </div>
+
+              <!-- 13:00 Slot -->
+              <div class="tt-time">01:00 PM</div>
+              <div class="tt-cell" style="grid-column: span 2; border-left: 3px solid var(--accent-blue); display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 8px;">
+                <span class="tt-subject">CS431 (Lab)</span>
+                <span class="tt-room">Lab 1</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-amber); background: rgba(245,158,11,0.05);">
+                <span class="tt-subject">CS409</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-purple);">
+                <span class="tt-subject">CS407</span>
+                <span class="tt-room">Room 204</span>
+              </div>
+              <div class="tt-cell" style="grid-column: span 2; border-left: 3px solid var(--accent-cyan); display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 8px;">
+                <span class="tt-subject">CS433 (Lab)</span>
+                <span class="tt-room">Lab 2</span>
+              </div>
+
+              <!-- 14:00 Slot -->
+              <div class="tt-time">02:00 PM</div>
+              <div class="tt-cell" style="grid-column: span 2; border-left: 3px solid var(--accent-blue); display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 8px;">
+                <span class="tt-subject">CS431 (Lab)</span>
+                <span class="tt-room">Lab 1</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-rose); background: rgba(244,63,94,0.05);">
+                <span class="tt-subject">MA401</span>
+                <span class="tt-room">Room 102</span>
+              </div>
+              <div class="tt-cell" style="border-left: 3px solid var(--accent-cyan);">
+                <span class="tt-subject">CS405</span>
+                <span class="tt-room">Room 301</span>
+              </div>
+              <div class="tt-cell" style="grid-column: span 2; border-left: 3px solid var(--accent-cyan); display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 8px;">
+                <span class="tt-subject">CS433 (Lab)</span>
+                <span class="tt-room">Lab 2</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="card">
+          <h3 class="font-display" style="font-size: 14px; margin-bottom: 16px; color: var(--text-muted);">Subject Legend</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-blue);"></span>
+              <span style="font-size: 13px;">CS403 - Data Structures</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-cyan);"></span>
+              <span style="font-size: 13px;">CS405 - Computer Networks</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-purple);"></span>
+              <span style="font-size: 13px;">CS407 - Operating Systems</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-amber);"></span>
+              <span style="font-size: 13px;">CS409 - DBMS</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-emerald);"></span>
+              <span style="font-size: 13px;">CS411 - Software Engineering</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent-rose);"></span>
+              <span style="font-size: 13px;">MA401 - Engineering Maths IV</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

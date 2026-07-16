@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance — KTU Student Portal</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/charts.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-box">
+          <div class="logo-text">KTU</div>
+          <div class="logo-sub">Kerala<br>Technological<br>University</div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="about.html" class="nav-link"><i data-lucide="building-2"></i> About KTU</a>
+        <a href="attendance.html" class="nav-link"><i data-lucide="user-check"></i> Attendance</a>
+        <a href="timetable.html" class="nav-link"><i data-lucide="calendar-days"></i> Timetable</a>
+        <a href="fees.html" class="nav-link"><i data-lucide="indian-rupee"></i> Fees</a>
+        <a href="courses.html" class="nav-link"><i data-lucide="book-open"></i> Courses</a>
+        <a href="rank.html" class="nav-link"><i data-lucide="trophy"></i> Rankings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="avatar">AS</div>
+          <div class="user-info">
+            <div class="user-name">Arjun Suresh</div>
+            <div class="user-roll">TVE21CS047</div>
+          </div>
+          <button class="logout-btn" onclick="window.location.href='../index.html'" title="Logout">
+            <i data-lucide="log-out" style="width: 18px; height: 18px;"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle"><i data-lucide="menu"></i></button>
+          <h1 class="page-title">Attendance</h1>
+        </div>
+        <div class="topbar-right">
+          <button class="notification-btn">
+            <i data-lucide="bell"></i>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-wrapper fade-in">
+        
+        <div class="alert alert-amber">
+          <i data-lucide="alert-triangle"></i>
+          Your attendance in Engineering Mathematics IV is below the required 75%.
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 24px;">
+          <div class="card">
+            <h2 class="font-display" style="font-size: 16px; margin-bottom: 16px; color: var(--text-secondary);">Overall Attendance</h2>
+            <div style="position: relative; height: 200px; width: 100%; display: flex; justify-content: center;">
+              <canvas id="attendanceChart"></canvas>
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <div style="font-family: 'Space Grotesk'; font-size: 28px; font-weight: 700; color: var(--text-primary);">81%</div>
+                <div style="font-size: 12px; color: var(--text-muted);">Present</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="grid-column: span 2;">
+            <h2 class="font-display" style="font-size: 16px; margin-bottom: 16px; color: var(--text-secondary);">Monthly Trend</h2>
+            <div style="height: 200px; width: 100%;">
+              <canvas id="monthlyChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="font-display" style="font-size: 18px; margin-bottom: 20px;">Subject-wise Attendance</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Code</th>
+                  <th>Attended</th>
+                  <th>Total</th>
+                  <th>Percentage</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Engineering Mathematics IV</td>
+                  <td style="color: var(--text-muted);">MA401</td>
+                  <td>28</td>
+                  <td>38</td>
+                  <td style="font-weight: 600; color: var(--accent-amber);">73.7%</td>
+                  <td><span class="badge warning">At Risk</span></td>
+                </tr>
+                <tr>
+                  <td>Data Structures</td>
+                  <td style="color: var(--text-muted);">CS403</td>
+                  <td>40</td>
+                  <td>42</td>
+                  <td style="font-weight: 600;">95.2%</td>
+                  <td><span class="badge safe">Safe</span></td>
+                </tr>
+                <tr>
+                  <td>Computer Networks</td>
+                  <td style="color: var(--text-muted);">CS405</td>
+                  <td>35</td>
+                  <td>38</td>
+                  <td style="font-weight: 600;">92.1%</td>
+                  <td><span class="badge safe">Safe</span></td>
+                </tr>
+                <tr>
+                  <td>Operating Systems</td>
+                  <td style="color: var(--text-muted);">CS407</td>
+                  <td>32</td>
+                  <td>38</td>
+                  <td style="font-weight: 600;">84.2%</td>
+                  <td><span class="badge safe">Safe</span></td>
+                </tr>
+                <tr>
+                  <td>DBMS</td>
+                  <td style="color: var(--text-muted);">CS409</td>
+                  <td>36</td>
+                  <td>40</td>
+                  <td style="font-weight: 600;">90.0%</td>
+                  <td><span class="badge safe">Safe</span></td>
+                </tr>
+                <tr>
+                  <td>Software Engineering</td>
+                  <td style="color: var(--text-muted);">CS411</td>
+                  <td>22</td>
+                  <td>30</td>
+                  <td style="font-weight: 600; color: var(--accent-amber);">73.3%</td>
+                  <td><span class="badge warning">At Risk</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
