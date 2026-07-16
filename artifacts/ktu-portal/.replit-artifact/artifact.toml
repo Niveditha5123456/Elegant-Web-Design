@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "KTU Portal"
+version = "1.0.0"
+id = "artifacts/ktu-portal"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18266
+
+[services.development]
+run = "pnpm --filter @workspace/ktu-portal run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ktu-portal", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ktu-portal/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18266"
+BASE_PATH = "/"
